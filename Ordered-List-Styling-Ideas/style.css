@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
-
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+body {font-family:'Roboto Slab', "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;}
 /* Based on http://www.456bereastreet.com/archive/201105/styling_ordered_list_numbers/ */
 
 /* #1- Larger numbers */
@@ -8,11 +9,13 @@ ol.large-numbers {
 	counter-reset:li; /* Initiate a counter */
 	margin-left:0; /* Remove the default left margin */
 	padding-left:0; /* Remove the default left padding */
+	line-height: 1.25;
 }
 ol.large-numbers > li {
 	position:relative; /* Create a positioning context */
 	list-style:none; /* Disable the normal item numbering */
 	margin: 1em 0 1em 2em;
+	padding-left: 1em;
 }
 ol.large-numbers > li:before {
 	content:counter(li); /* Use the counter as content */
@@ -21,10 +24,16 @@ ol.large-numbers > li:before {
 	position:absolute;
 	top: -0.3em; /* move numbers up or down as needed */
 	left:-0.9em;
+	width: 1em;
+	text-align:center;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
 	font-size: 2em;
-	font-weight:bold;
-	color: #00DBFF;
+	font-weight: bold;
+	font-weight: 700;
+	color: #5B5B5B;
+}
+ol.large-numbers li:hover:before {
+	color: #C57D7E;
 }
