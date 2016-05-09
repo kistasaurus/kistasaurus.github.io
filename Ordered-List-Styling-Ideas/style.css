@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Based on http://www.456bereastreet.com/archive/201105/styling_ordered_list_numbers/ */
+
+/* #1- Larger numbers */
+ol.large-numbers {
+	counter-reset:li; /* Initiate a counter */
+	margin-left:0; /* Remove the default left margin */
+	padding-left:0; /* Remove the default left padding */
+}
+ol.large-numbers > li {
+	position:relative; /* Create a positioning context */
+	list-style:none; /* Disable the normal item numbering */
+	margin: 1em 0 1em 2em;
+}
+ol.large-numbers > li:before {
+	content:counter(li); /* Use the counter as content */
+	counter-increment:li; /* Increment the counter by 1 */
+	/* Position and style the number */
+	position:absolute;
+	top: -0.3em; /* move numbers up or down as needed */
+	left:-0.9em;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	font-size: 2em;
+	font-weight:bold;
+	color: #00DBFF;
+}
