@@ -1,0 +1,324 @@
+
+/* LESS Document */
+@charset "utf-8";
+/* Thanks to manekineko for the pallette: http://www.colourlovers.com/palette/92095/Giant_Goldfish */
+@one: #01A2A6;
+@two: #29D9C2;
+@three: #BDF271;
+@four: @one;
+@five: @two;
+@main: #fff;
+@light: rgba(255,255,255,0.50);
+.transition(@transition) {
+	transition: all @transition ease;
+}
+.current {
+	cursor: default;
+}
+/* One */
+#one {
+	background-color: @one;
+	nav {
+		padding: 0;
+		text-align: center;
+		clear: both;
+		display: block;
+		a, span {
+			display: inline-block;
+			text-decoration: none;
+			padding: .3em 1em;
+			border-top: 3px solid @light;
+			color: @main;
+			.transition(0.25s);
+			@media all and (max-width: 645px) {
+				display: block;
+				text-align: center;
+				font-size: 1.25em;
+			}
+			@media all and (max-width: 460px) {
+				margin: 0.5em auto;
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+		a:hover {
+			border-top: 3px solid @main;
+			color: @main;
+		}
+		.current {
+			border-top: 3px solid @main;
+			font-weight: bold;
+		}
+	}
+	.pages {
+		display: inline-block;
+		a, span {
+			display: inline-block;
+			@media all and (max-width: 645px) {
+				padding-bottom: 0;
+				padding: .3em 0.25em;
+				border-top: none;
+				font-size: 2em;
+				border-top: none;
+					&:link, &:visited {
+						color: @light;
+					}
+					&:hover,
+					&:active {
+						color: @main;
+						border-top: none;
+					}
+			}
+		}
+		@media all and (max-width: 645px) {
+			border-left: 3px solid @light;
+			border-right: 3px solid @light;
+			display: block;
+		}
+	}
+	.paged {
+		.previous,
+		.next {
+			border: 3px solid @light;
+			transform: translateZ(0);
+				&:hover{
+					border: 3px solid @main;
+				}
+		}
+		.previous {
+			margin-right: 1em;
+			@media all and (max-width: 645px) {
+				margin-right: 0;
+			}
+		}
+		.next {
+			margin-left: 1em;
+			@media all and (max-width: 645px) {
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+/* Two */
+#two {
+ background-color: @two;
+	nav {
+		padding: 0;
+		text-align: center;
+		clear: both;
+		display: block;
+		a,
+		span {
+			text-decoration: none;
+			padding: .3em 1em;
+			display: inline-block;
+			.transition(0.5s);
+			color: @main;
+			border: 1px solid @main;
+			background-color: transparent;
+				@media all and (max-width: 625px) {
+					display: block;
+					font-size: 1.25em;
+					text-align: center;
+					margin: 0.5em 0;
+				}
+		}
+		.current {
+			background-color: rgba(255,255,255,0.25);
+			color: @main;
+		}
+		a:hover {
+			background-color: @light;
+		}
+		.previous {
+			-webkit-border-top-left-radius: 5px;
+			-moz-border-radius-topleft: 5px;
+			border-top-left-radius: 5px;
+			text-align: right;
+				@media all and (max-width: 625px) {
+					text-align: center;
+				}
+		}
+		.next {
+			-webkit-border-top-right-radius: 5px;
+			-moz-border-radius-topright: 5px;
+			border-top-right-radius: 5px;
+			text-align: left;
+				@media all and (max-width: 625px) {
+					-webkit-border-top-right-radius: 0;
+					-moz-border-radius-topright: 0;
+					border-top-right-radius: 0;
+					-webkit-border-bottom-right-radius: 5px;
+					-moz-border-radius-bottomright: 5px;
+					border-bottom-right-radius: 5px;
+					text-align: center;
+				}
+		}
+		.pages {
+			display: inline-block;
+				@media all and (max-width: 625px) {
+					display: block;
+					width: 100%;
+				}
+		}
+	}
+}
+/* Three */
+#three {
+	background-color: @three;
+		nav {
+			padding: 0;
+			text-align: center;
+			clear: both;
+			display: block;
+				a, span {
+					text-decoration: none;
+					padding: 0.25em;
+					line-height: 2em;
+					display: inline-block;
+					font-weight: bold;
+					color: @main;
+						@media all and (max-width: 580px) {
+							margin: 0.25em;
+						}
+				}
+				a:hover {
+					color: darken(@three, 30%);
+				}
+				.previous {
+					text-align: right;
+				}
+				.next {
+					text-align: left;
+				}
+				.pages {
+					display: inline-block;
+						a, span {
+							border-radius: 50%;
+							width: 2em;
+							height: 2em;
+							border: 3px solid @main;
+							.transition(0.5s);
+						}
+						.current {
+							background-color: @main;
+							color: darken(@three, 30%);
+							font-weight: bold;
+							border-color: transparent;
+						}
+						a:hover {
+							border-color: transparent;
+							background-color: @light;
+						}
+				}
+				@media all and (max-width: 580px) {
+					font-size: 1.25em;
+				}
+		}
+}
+/* Four */
+#four {
+	background-color: @four;
+		nav {
+			padding: 0;
+			text-align: center;
+			clear: both;
+			display: block;
+				a, span {
+					text-decoration: none;
+					padding: 0.25em;
+					line-height: 1em;
+					display: inline-block;
+					color: @main;
+					.transition(0.5s);
+					border-radius: 2px;
+				}
+				a:hover {
+					color: darken(@four, 30%);
+				}
+				.previous {
+					text-align: right;
+				}
+				.next {
+					text-align: left;
+				}
+				.pages {
+					display: inline-block;
+						a, span {
+							width: 1.25em;
+						}
+				}
+				.pages a,
+				.pages span,
+				.pubHome {
+					height: 1em;
+					border: 3px solid @main;
+					color: @main;
+						@media all and (max-width: 515px) {
+							height: auto;
+						}
+				}
+				.pages .current {
+					background-color: @light;
+					color: darken(@four, 30%);
+					border-color: @light;
+				}
+				.pages a:hover,
+				.pubHome:hover {
+					background-color:@light;
+					color: darken(@four, 30%);
+
+				}
+				@media all and (max-width: 515px) {
+					font-size: 1.25em;
+						a {
+							margin: 0.25em;
+						}
+				}
+		}
+}
+/* Five */
+#five {
+	background-color: @five;
+		nav {
+			padding: 0;
+			text-align: center;
+			clear: both;
+			display: block;
+			color: @main;
+				a, span {
+					text-decoration: none;
+					padding: 0.25em;
+					line-height: 1em;
+					display: inline-block;
+					color: @main;
+					.transition(0.5s);
+				}
+				a:hover {
+					color: darken(@five, 30%);
+				}
+				.pages {
+					display: inline-block;
+						a, span {
+							width: 1.25em;
+							border-right: 1px solid @main;
+								&:last-child {
+									border-right: none;
+								}
+						}
+				}
+				.current {
+					color: darken(@five, 30%);
+				}
+		}
+}
+
+@media all and (max-width: 450px) {
+#five nav {
+	font-size: 1.25em;
+}
+#five nav a {
+	padding: 0.5em;
+}
+}
